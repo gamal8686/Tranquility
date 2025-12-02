@@ -15,23 +15,22 @@ class AppOtp extends StatelessWidget {
         inputFormatters: [FilteringTextInputFormatter.digitsOnly],
         keyboardType: TextInputType.number,
 
-
         appContext: context,
 
         length: 4,
 
         pinTheme: PinTheme(
-            selectedColor: Colors.white,
-           activeColor: Colors.white,
+          selectedColor: Colors.white,
+          activeColor: Colors.white,
           inactiveFillColor: Theme.of(context).primaryColor,
 
-       inactiveColor: Theme.of(context).primaryColor,
+          inactiveColor: Theme.of(context).primaryColor,
           borderRadius: BorderRadius.circular(8.r),
 
           fieldWidth: 45.w,
           fieldHeight: 45.h,
           shape: PinCodeFieldShape.box,
-          fieldOuterPadding: EdgeInsets.all(5.r)
+          fieldOuterPadding: EdgeInsets.all(5.r),
         ),
       ),
     );

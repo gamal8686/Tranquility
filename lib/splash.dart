@@ -19,6 +19,7 @@ class _SplashState extends State<Splash> {
     super.initState();
     Timer(Duration(seconds: 4), () => goTo(OnBoardingView()));
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,13 +40,15 @@ class _SplashState extends State<Splash> {
                     color: Color(0xff284243),
                   ),
                 ),
-                Text('Together Towards Tranquility',
+                Text(
+                  'Together Towards Tranquility',
                   style: TextStyle(
                     fontFamily: 'Inter',
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w400,
                     color: Color(0xff284243),
-                  ),)
+                  ),
+                ),
               ],
             ),
           ),

@@ -27,7 +27,7 @@ class AppImage extends StatelessWidget {
     }
     if (path.endsWith('png')) {
       return Image.asset(
-        'assets/png/$path',
+        'assets/images/$path',
         height: height,
         width: width,
         errorBuilder: (context, error, stackTrace) => Text('55'),
@@ -38,7 +38,7 @@ class AppImage extends StatelessWidget {
         'assets/icons/$path',
         height: height,
         width: width,
-        errorBuilder: (context, error, stackTrace) => Text('404'),
+        errorBuilder: (context, error, stackTrace) => Text('22'),
       );
     }
     if (path.endsWith('jpg')) {
@@ -48,8 +48,7 @@ class AppImage extends StatelessWidget {
         width: width,
         errorBuilder: (context, error, stackTrace) => Text('404'),
       );
-    }
-     else {
+    } else {
       return Text('22');
     }
   }
