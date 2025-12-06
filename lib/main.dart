@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranquility/splash.dart';
 
 import 'auth/login.dart';
+import 'auth/register.dart';
 import 'core/logic/goto.dart';
 import 'core/logic/show_masseg.dart';
 
@@ -90,7 +91,7 @@ class MyApp extends StatelessWidget {
           ),
           builder: (context, child) =>
               Directionality(textDirection: TextDirection.ltr, child: child!),
-          home:  LoginView(),
+          home:  RegisterView(),
         );
       },
     );
