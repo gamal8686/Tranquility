@@ -7,7 +7,6 @@ import 'package:tranquility/core/components/app_image.dart';
 import 'package:tranquility/core/components/app_input.dart';
 import 'dart:io';
 
-
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
 
@@ -31,8 +30,13 @@ class _RegisterViewState extends State<RegisterView> {
                 CircleAvatar(
                   backgroundColor: Color(0xff000000).withValues(alpha: 0.10),
                   minRadius: 57,
-                  child: selectImage != null?Image.file(File(selectImage!.path)):AppImage(path: 'empty_image.svg')
+                  child: selectImage != null
+                      ? Image.file(
+                        File(selectImage!.path),
+                        fit: BoxFit.cover,
 
+                      )
+                      : AppImage(path: 'empty_image.svg'),
                 ),
                 Positioned(
                   bottom: 0,
@@ -71,7 +75,18 @@ class _RegisterViewState extends State<RegisterView> {
                                   SizedBox(width: 50.w),
 
                                   GestureDetector(
-                                    onTap: () {},
+                                    onTap: () async {
+                                      XFile? responsive = await ImagePicker()
+                                          .pickImage(
+                                            source: ImageSource.gallery,
+                                          );
+                                      if (responsive != null) {
+                                        selectImage = responsive;
+                                        setState(() {});
+                                      }
+
+                                      Navigator.pop(context, selectImage);
+                                    },
                                     child: AppImage(
                                       path: 'gallery.svg',
                                       height: 90.h,
