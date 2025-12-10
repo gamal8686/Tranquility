@@ -68,7 +68,7 @@ class EditProfileView extends StatelessWidget {
                 Text(
                   'Change Password',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 16.sp,
                     fontWeight: FontWeight.w600,
                     fontFamily: 'Inter',
                     color: Color(0xff000000),
