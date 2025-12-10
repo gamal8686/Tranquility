@@ -15,6 +15,7 @@ class RegisterView extends StatefulWidget {
 }
 
 class _RegisterViewState extends State<RegisterView> {
+ ///todo
   XFile? selectImage;
 
   @override

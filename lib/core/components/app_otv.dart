@@ -10,28 +10,32 @@ class AppOtp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 50.w, right: 50.w),
+      padding: EdgeInsets.symmetric(horizontal: 12.w),
       child: PinCodeTextField(
+        useExternalAutoFillGroup: true,
+        enableActiveFill: true,
         inputFormatters: [FilteringTextInputFormatter.digitsOnly],
         keyboardType: TextInputType.number,
-
         appContext: context,
-
         length: 4,
-
         pinTheme: PinTheme(
-          selectedColor: Colors.white,
-          activeColor: Colors.white,
-          inactiveFillColor: Theme.of(context).primaryColor,
-
-          inactiveColor: Theme.of(context).primaryColor,
+          shape: PinCodeFieldShape.box,
+          fieldWidth: 55.5.w,
+          fieldHeight: 50.h,
           borderRadius: BorderRadius.circular(8.r),
 
-          fieldWidth: 45.w,
-          fieldHeight: 45.h,
-          shape: PinCodeFieldShape.box,
+          activeFillColor: Color(0xffACACAC).withValues(alpha: 0.1),
+          selectedFillColor: Color(0xffACACAC).withValues(alpha: 0.1),
+          inactiveFillColor: Color(0xffACACAC).withValues(alpha: 0.1),
+
+          activeColor: Color(0xff284243).withValues(alpha: 0.29),
+          selectedColor: Color(0xff284243).withValues(alpha: 0.29),
+          inactiveColor: Color(0xff284243).withValues(alpha: 0.29),
+
           fieldOuterPadding: EdgeInsets.all(5.r),
         ),
+
+        onChanged: (value) {},
       ),
     );
   }

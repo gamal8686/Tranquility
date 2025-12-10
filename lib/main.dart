@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tranquility/splash.dart';
 
-import 'auth/login.dart';
-import 'auth/register.dart';
+import 'bottom_bar/edit_Profile.dart';
 import 'core/logic/goto.dart';
 import 'core/logic/show_masseg.dart';
 
@@ -56,7 +54,7 @@ class MyApp extends StatelessWidget {
 
               inputDecorationTheme: InputDecorationTheme(
                 filled: true,
-                fillColor: Color(0xff284243).withValues(alpha: 0.29),
+                fillColor: Color(0xff284243).withValues(alpha: 0.20),
 
 
                 border: OutlineInputBorder(
@@ -91,7 +89,7 @@ class MyApp extends StatelessWidget {
           ),
           builder: (context, child) =>
               Directionality(textDirection: TextDirection.ltr, child: child!),
-          home:  RegisterView(),
+          home:  EditProfileView(),
         );
       },
     );

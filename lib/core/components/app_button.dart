@@ -22,7 +22,7 @@ class AppButton extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           text,
-          style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600),
+          style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w500),
         ),
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'app_dropDown.dart';
 import 'app_image.dart';
 
 class AppInput extends StatefulWidget {
@@ -21,15 +22,7 @@ class AppInput extends StatefulWidget {
 }
 
 class _AppInputState extends State<AppInput> {
-  final list = [10, 20, 30];
-  late int selectedCountryCode;
   bool isHidden = true;
-
-  @override
-  void initState() {
-    super.initState();
-    selectedCountryCode = list.first;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,37 +32,7 @@ class _AppInputState extends State<AppInput> {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            if (widget.dropDown)
-              Padding(
-                padding: EdgeInsetsDirectional.only(end: 10.w),
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: Theme.of(
-                      context,
-                    ).inputDecorationTheme.enabledBorder!.borderSide.color,
-                    border: Border.all(),
-                    borderRadius: BorderRadius.circular(8.r),
-                  ),
-                  child: DropdownButton<int>(
-                    icon: Padding(
-                      padding: EdgeInsetsDirectional.only(start: 4.w),
-                      child: AppImage(path: 'DropdownButton.svg'),
-                    ),
-
-                    padding: EdgeInsets.symmetric(horizontal: 16.w),
-                    value: selectedCountryCode,
-                    items: list
-                        .map(
-                          (e) => DropdownMenuItem(value: e, child: Text('$e')),
-                        )
-                        .toList(),
-                    onChanged: (value) {
-                      selectedCountryCode = value!;
-                      setState(() {});
-                    },
-                  ),
-                ),
-              ),
+            if (widget.dropDown) AppDropdown(),
 
             Expanded(
               child: TextFormField(
@@ -85,8 +48,8 @@ class _AppInputState extends State<AppInput> {
                             },
                             icon: AppImage(
                               path: isHidden
-                                  ? 'visibility_on.svg'
-                                  : 'visibility_off.svg',
+                                  ? 'visibility_off.svg'
+                                  : 'visibility_on.svg',
                             ),
                           )
                         : null,
