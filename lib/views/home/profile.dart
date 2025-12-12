@@ -5,16 +5,14 @@ import 'package:tranquility/core/components/app_dropDown.dart';
 import 'package:tranquility/core/components/app_image.dart';
 import 'package:tranquility/core/components/app_input.dart';
 
-class EditProfileView extends StatelessWidget {
-  const EditProfileView({super.key});
+class EditProfilePage extends StatelessWidget {
+  const EditProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Icon(Icons.home),
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        
-      },child: AppImage(path: 'chat_button.svg'),),
+
       appBar: AppBar(title: Text('edit profile')),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(20),
@@ -75,9 +73,10 @@ class EditProfileView extends StatelessWidget {
                   ),
                 ),
                 Spacer(),
-                IconButton(onPressed: () {
-
-                },icon: AppImage(path: 'edit_info.svg'),)
+                IconButton(
+                  onPressed: () {},
+                  icon: AppImage(path: 'edit_info.svg'),
+                ),
               ],
             ),
           ],

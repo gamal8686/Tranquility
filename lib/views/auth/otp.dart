@@ -4,7 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranquility/core/components/app_button.dart';
 import 'package:tranquility/core/components/app_image.dart';
 
-import '../core/components/app_otv.dart';
+import '../../core/components/app_otv.dart';
+
 
 class OtpView extends StatelessWidget {
   const OtpView({super.key});

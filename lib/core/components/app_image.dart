@@ -5,13 +5,14 @@ class AppImage extends StatelessWidget {
   final String path;
   final double? height, width;
   final BoxFit? fit;
+ final Color? color;
 
   const AppImage({
     super.key,
     required this.path,
     this.height,
     this.width,
-    this.fit = BoxFit.cover,
+    this.fit = BoxFit.cover, this.color,
   });
 
   @override
@@ -36,6 +37,7 @@ class AppImage extends StatelessWidget {
     if (path.endsWith('svg')) {
       return SvgPicture.asset(
         'assets/icons/$path',
+        color:color ,
         height: height,
         width: width,
         errorBuilder: (context, error, stackTrace) => Text('22'),

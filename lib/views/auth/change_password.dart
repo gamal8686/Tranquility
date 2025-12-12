@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranquility/core/components/app_image.dart';
 
-import '../core/components/app_button.dart';
-import '../core/components/app_input.dart';
+import '../../core/components/app_button.dart';
+import '../../core/components/app_input.dart';
 
-class CreateNewPasswordView extends StatelessWidget {
-  const CreateNewPasswordView({super.key});
+
+
+class ChangePasswordView extends StatelessWidget {
+  const ChangePasswordView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,11 +19,11 @@ class CreateNewPasswordView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 20.h),
+            SizedBox(height: 10.h),
             AppImage(path: 'forget_password.png', height: 254.h, width: 385.w),
             SizedBox(height: 20.h),
             Text(
-              'Create New Password',
+              'Change Your Password',
               style: TextStyle(
                 fontSize: 24.sp,
                 fontWeight: FontWeight.w400,
@@ -30,22 +32,18 @@ class CreateNewPasswordView extends StatelessWidget {
               ),
             ),
             SizedBox(height: 16.h,),
-            Text('create your new password to log in !',
-              style: TextStyle(
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w500,
-                color: Color(0xff000000),
-                fontFamily: 'Inter',
-              ),),
-            SizedBox(height: 20.h),
-            AppInput(label: 'Password',isPassword: true,),
-            SizedBox(height: 10.h),
-            AppInput(label: 'Confirm Password',isPassword: true,),
-            SizedBox(height: 10.h),
+
+            AppInput(label: 'Old Password',isPassword: true,),
+
+            AppInput(label: 'New Password',isPassword: true,),
+
+            AppInput(label: 'Confirm New Password',isPassword: true,),
+            SizedBox(height: 30.h,),
+
             Center(
               child: AppButton(
                 onPressed: () {},
-                text: 'Forget Password',
+                text: 'Change Password',
                 width: 382.w,
               ),
             ),

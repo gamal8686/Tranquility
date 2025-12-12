@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tranquility/views/home/chats.dart';
+import 'package:tranquility/views/home/quotes.dart';
+import 'package:tranquility/views/home/views.dart';
 
-import 'bottom_bar/edit_Profile.dart';
 import 'core/logic/goto.dart';
 import 'core/logic/show_masseg.dart';
 
@@ -89,7 +91,7 @@ class MyApp extends StatelessWidget {
           ),
           builder: (context, child) =>
               Directionality(textDirection: TextDirection.ltr, child: child!),
-          home:  EditProfileView(),
+          home:  HomeViews(),
         );
       },
     );
