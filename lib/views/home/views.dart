@@ -5,7 +5,7 @@ import 'package:tranquility/views/home/chats.dart';
 import 'package:tranquility/views/home/quotes.dart';
 
 import '../../core/components/app_image.dart';
-import 'drawer.dart';
+import '../../core/components/app_drawer.dart';
 import 'profile.dart';
 
 class HomeViews extends StatefulWidget {

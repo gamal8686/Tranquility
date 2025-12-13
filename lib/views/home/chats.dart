@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/components/app_image.dart';
-import 'drawer.dart';
+import '../../core/components/app_drawer.dart';
 
 class ChatsPage extends StatefulWidget {
   const ChatsPage({super.key});

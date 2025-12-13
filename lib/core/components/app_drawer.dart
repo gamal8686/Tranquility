@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranquility/core/components/app_image.dart';
 
-import '../../core/components/app_filed_drower.dart';
+import 'app_filed_drower.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});

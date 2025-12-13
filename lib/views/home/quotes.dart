@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranquility/core/components/app_image.dart';
 import 'package:clipboard/clipboard.dart';
 
-import 'drawer.dart';
+import '../../core/components/app_drawer.dart';
 
 class QuotesPage extends StatelessWidget {
   const QuotesPage({super.key});

@@ -5,7 +5,7 @@ import 'package:tranquility/core/components/app_dropDown.dart';
 import 'package:tranquility/core/components/app_image.dart';
 import 'package:tranquility/core/components/app_input.dart';
 
-import 'drawer.dart';
+import '../../core/components/app_drawer.dart';
 
 class EditProfilePage extends StatelessWidget {
   const EditProfilePage({super.key});
