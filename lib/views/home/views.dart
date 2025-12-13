@@ -5,6 +5,7 @@ import 'package:tranquility/views/home/chats.dart';
 import 'package:tranquility/views/home/quotes.dart';
 
 import '../../core/components/app_image.dart';
+import 'drawer.dart';
 import 'profile.dart';
 
 class HomeViews extends StatefulWidget {
@@ -21,6 +22,7 @@ class _HomeViewsState extends State<HomeViews> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: AppDrawer(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: AppImage(path: 'chat_button.svg'),

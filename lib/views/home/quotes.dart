@@ -4,25 +4,23 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranquility/core/components/app_image.dart';
 import 'package:clipboard/clipboard.dart';
 
+import 'drawer.dart';
+
 class QuotesPage extends StatelessWidget {
   const QuotesPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-
     List<CopyModel> list = [
-    CopyModel(
-        text:  '"The only way to do great work is to love what you do "',
+      CopyModel(
+        text: '"The only way to do great work is to love what you do "',
         titel: 'Steve Jobsa',
-      ),CopyModel(
-        text: ' what you do',
-        titel: ' Jobsa',
       ),
+      CopyModel(text: ' what you do', titel: ' Jobsa'),
     ];
     int currintIndex = 0;
     return Scaffold(
-      drawer: Icon(Icons.home),
-
+      drawer: AppDrawer(),
       appBar: AppBar(title: Text('Quotes')),
       body: Stack(
         children: [
@@ -86,7 +84,6 @@ class QuotesPage extends StatelessWidget {
                         SnackBar(content: Text('This Copy is Completed')),
                       );
                     }
-
                   },
                   child: Row(
                     mainAxisSize: MainAxisSize.min,

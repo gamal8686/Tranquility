@@ -5,15 +5,19 @@ import 'package:tranquility/core/components/app_dropDown.dart';
 import 'package:tranquility/core/components/app_image.dart';
 import 'package:tranquility/core/components/app_input.dart';
 
+import 'drawer.dart';
+
 class EditProfilePage extends StatelessWidget {
   const EditProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Icon(Icons.home),
+drawer: AppDrawer(),
 
-      appBar: AppBar(title: Text('edit profile')),
+      appBar: AppBar(
+
+          title: Text('edit profile')),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(20),
         child: Column(

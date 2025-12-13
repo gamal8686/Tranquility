@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/components/app_image.dart';
+import 'drawer.dart';
 
 class ChatsPage extends StatefulWidget {
   const ChatsPage({super.key});
@@ -21,7 +22,7 @@ class _ChatsPageState extends State<ChatsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Icon(Icons.home),
+      drawer: AppDrawer(),
 
       appBar: AppBar(title: Text('Chats')),
       body: ListView.separated(
