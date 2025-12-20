@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranquility/views/auth/login.dart';
+import 'package:tranquility/views/auth/register.dart';
 import 'package:tranquility/views/home/profile.dart';
 import 'package:tranquility/views/home/views.dart';
 import 'package:tranquility/views/start_chat.dart';
@@ -86,7 +87,7 @@ class MyApp extends StatelessWidget {
           ),
           builder: (context, child) =>
               Directionality(textDirection: TextDirection.ltr, child: child!),
-          home: SuggestionsViews(),
+          home: RegisterView(),
         );
       },
     );

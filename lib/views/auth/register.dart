@@ -12,7 +12,7 @@ class RegisterView extends StatefulWidget {
   State<RegisterView> createState() => _RegisterViewState();
 }
 class _RegisterViewState extends State<RegisterView> {
-  ///todo
+
   XFile? selectImage;
   @override
   Widget build(BuildContext context) {
@@ -25,15 +25,19 @@ class _RegisterViewState extends State<RegisterView> {
             Stack(
               children: [
                 CircleAvatar(
-                  backgroundColor: Color(0xff000000).withValues(alpha: 0.10),
-                  minRadius: 57.r,
-                  child: selectImage != null
-                      ? Image.file(File(selectImage!.path), fit: BoxFit.cover)
-                      : AppImage(path: 'empty_image.svg'),
+                  radius: 60,
+                  backgroundColor: const Color(0xff000000).withValues(alpha: 0.10),
+                  backgroundImage: selectImage != null
+                      ? FileImage(File(selectImage!.path))
+                      : null,
+                  child: selectImage == null
+                      ? AppImage(path: 'empty_image.svg')
+                      : null,
                 ),
+
                 Positioned(
                   bottom: 0,
-                  left: 180,
+                  right: 0,
                   child: GestureDetector(
                     onTap: () {
                       showModalBottomSheet(
@@ -91,7 +95,7 @@ class _RegisterViewState extends State<RegisterView> {
                       );
                     },
                     child: CircleAvatar(
-                      minRadius: 25.r,
+                     minRadius: 20.r,
                       backgroundColor: Theme.of(context).primaryColor,
                       child: AppImage(path: 'plus.svg'),
                     ),
