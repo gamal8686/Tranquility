@@ -6,18 +6,14 @@ import 'package:tranquility/core/components/app_button_navigator_text.dart%20.da
 import 'package:tranquility/core/components/app_image.dart';
 import 'package:tranquility/core/components/app_input.dart';
 import 'dart:io';
-
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
-
   @override
   State<RegisterView> createState() => _RegisterViewState();
 }
-
 class _RegisterViewState extends State<RegisterView> {
- ///todo
+  ///todo
   XFile? selectImage;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,13 +26,9 @@ class _RegisterViewState extends State<RegisterView> {
               children: [
                 CircleAvatar(
                   backgroundColor: Color(0xff000000).withValues(alpha: 0.10),
-                  minRadius: 57,
+                  minRadius: 57.r,
                   child: selectImage != null
-                      ? Image.file(
-                        File(selectImage!.path),
-                        fit: BoxFit.cover,
-
-                      )
+                      ? Image.file(File(selectImage!.path), fit: BoxFit.cover)
                       : AppImage(path: 'empty_image.svg'),
                 ),
                 Positioned(
@@ -47,13 +39,12 @@ class _RegisterViewState extends State<RegisterView> {
                       showModalBottomSheet(
                         builder: (context) {
                           return SizedBox(
-                            height: 250,
+                            height: 250.h,
                             child: Center(
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   SizedBox(height: 20.h),
-
                                   GestureDetector(
                                     onTap: () async {
                                       XFile? responsive = await ImagePicker()
@@ -64,7 +55,6 @@ class _RegisterViewState extends State<RegisterView> {
                                         selectImage = responsive;
                                         setState(() {});
                                       }
-
                                       Navigator.pop(context, selectImage);
                                     },
                                     child: AppImage(
@@ -74,7 +64,6 @@ class _RegisterViewState extends State<RegisterView> {
                                     ),
                                   ),
                                   SizedBox(width: 50.w),
-
                                   GestureDetector(
                                     onTap: () async {
                                       XFile? responsive = await ImagePicker()
@@ -85,7 +74,6 @@ class _RegisterViewState extends State<RegisterView> {
                                         selectImage = responsive;
                                         setState(() {});
                                       }
-
                                       Navigator.pop(context, selectImage);
                                     },
                                     child: AppImage(
@@ -103,8 +91,7 @@ class _RegisterViewState extends State<RegisterView> {
                       );
                     },
                     child: CircleAvatar(
-                      minRadius: 25,
-
+                      minRadius: 25.r,
                       backgroundColor: Theme.of(context).primaryColor,
                       child: AppImage(path: 'plus.svg'),
                     ),
@@ -126,18 +113,15 @@ class _RegisterViewState extends State<RegisterView> {
               ),
             ),
             SizedBox(height: 15.h),
-
             AppInput(label: 'Password', isPassword: true),
-            SizedBox(height: 25),
+            SizedBox(height: 25.h),
             Text(
               'Confirm password ',
               style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w400),
             ),
-            SizedBox(height: 45),
-
-            AppButton(text: 'Sign Up', onPressed: () {}, width: 380),
-            SizedBox(height: 20),
-
+            SizedBox(height: 45.h),
+            AppButton(text: 'Sign Up', onPressed: () {}, width: 380.w),
+            SizedBox(height: 20.h),
             Padding(
               padding: const EdgeInsets.only(left: 60),
               child: AppButtonNavigatorText(

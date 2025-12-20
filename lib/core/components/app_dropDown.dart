@@ -1,25 +1,37 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'app_image.dart';
 
 class AppDropdown extends StatefulWidget {
-  const AppDropdown({super.key});
+  final void Function(String) onSelectedCountryCode;
+
+  const AppDropdown({super.key, required this.onSelectedCountryCode});
 
   @override
   State<AppDropdown> createState() => _AppDropdownState();
 }
 
 class _AppDropdownState extends State<AppDropdown> {
-  final list = [10, 20, 30];
-  late int selectedCountryCode;
+  List<ListModel>? list;
+ late String selectedCountryCode;
 
+
+
+  Future<void> getData() async {
+    final rep = await Dio().get('https://growfet.com/api/Countries');
+    list = CuntryModel.fromJson({'list': rep.data}).list;
+    selectedCountryCode = list!.first.code;
+    widget.onSelectedCountryCode?.call(selectedCountryCode);
+
+    setState(() {});
+  }
   @override
   void initState() {
     super.initState();
-    selectedCountryCode = list.first;
+    getData();
   }
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -32,25 +44,55 @@ class _AppDropdownState extends State<AppDropdown> {
             border: Border.all(),
             borderRadius: BorderRadius.circular(8.r),
           ),
-          child: DropdownButton<int>(
-            isExpanded: true,
-            icon: Padding(
-              padding: EdgeInsetsDirectional.only(start: 4.w),
-              child: AppImage(path: 'arrow_down.svg'),
-            ),
+          child: list == null
+              ? Center(child: CircularProgressIndicator())
+              : DropdownButton<String>(
 
-            padding: EdgeInsets.symmetric(horizontal: 16.w),
-            value: selectedCountryCode,
-            items: list
-                .map((e) => DropdownMenuItem(value: e, child: Text('$e')))
-                .toList(),
-            onChanged: (value) {
-              selectedCountryCode = value!;
+                  icon: Padding(
+                    padding: EdgeInsetsDirectional.only(start: 60.w),
+                    child: AppImage(path: 'arrow_down.svg'),
+                  ),
+
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                  value: selectedCountryCode,
+                  items: list!
+                      .map(
+                        (e) => DropdownMenuItem<String>(
+                          value: e.code,
+                          child: Text(e.code),
+                        ),
+                      )
+                      .toList(),
+            onChanged: (String? value) {
+             if (value == null) return;
+              selectedCountryCode = value;
+              widget.onSelectedCountryCode?.call(selectedCountryCode);
               setState(() {});
             },
-          ),
+                ),
         ),
       ),
     );
+  }
+}
+
+class CuntryModel {
+  late final List<ListModel> list;
+
+  CuntryModel.fromJson(Map<String, dynamic> json) {
+    list = List.from(
+      json['list'] ?? [],
+    ).map((e) => ListModel.fromJson(e)).toList();  }
+}
+
+class ListModel {
+  late final num id;
+  late final String code;
+  late final String name;
+
+  ListModel.fromJson(Map<String, dynamic> json) {
+    id = json['id'] ?? 0;
+    code = json['code'] ?? '';
+    name = json['name'] ?? '';
   }
 }

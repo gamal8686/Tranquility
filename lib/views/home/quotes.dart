@@ -18,7 +18,7 @@ class QuotesPage extends StatelessWidget {
       ),
       CopyModel(text: ' what you do', titel: ' Jobsa'),
     ];
-    int currintIndex = 0;
+    int currentIndex = 0;
     return Scaffold(
       drawer: AppDrawer(),
       appBar: AppBar(title: Text('Quotes')),
@@ -33,7 +33,7 @@ class QuotesPage extends StatelessWidget {
                   color: Color(0xff000000).withValues(alpha: 0.25),
                   border: BoxBorder.all(),
                   borderRadius: BorderRadiusDirectional.all(
-                    Radius.circular(16),
+                    Radius.circular(16.r),
                   ),
                 ),
                 height: 358.h,
@@ -55,7 +55,7 @@ class QuotesPage extends StatelessWidget {
                 ),
                 SizedBox(height: 16.h),
                 Text(
-                  list[currintIndex].text,
+                  list[currentIndex].text,
                   style: TextStyle(
                     fontSize: 34.sp,
                     fontWeight: FontWeight.w400,
@@ -66,7 +66,7 @@ class QuotesPage extends StatelessWidget {
                 Align(
                   alignment: Alignment.centerRight,
                   child: Text(
-                    list[currintIndex].titel,
+                    list[currentIndex].titel,
                     style: TextStyle(
                       fontSize: 34.sp,
                       fontWeight: FontWeight.w400,
@@ -77,8 +77,8 @@ class QuotesPage extends StatelessWidget {
                 InkWell(
                   onTap: () {
                     FlutterClipboard.copy(
-                      list[currintIndex].text,
-                    ).then((value) => list[currintIndex]);
+                      list[currentIndex].text,
+                    ).then((value) => list[currentIndex]);
                     {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(content: Text('This Copy is Completed')),

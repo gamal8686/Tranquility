@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -5,6 +7,8 @@ import 'app_dropDown.dart';
 import 'app_image.dart';
 
 class AppInput extends StatefulWidget {
+  final void Function(String)? onSelectedCountryCode;
+ final int maxLines;
   final String? path, label;
   final bool dropDown;
   final bool isPassword;
@@ -15,6 +19,7 @@ class AppInput extends StatefulWidget {
     this.dropDown = false,
     this.label,
     this.isPassword = false,
+    this.onSelectedCountryCode, this.maxLines=1,
   });
 
   @override
@@ -32,12 +37,22 @@ class _AppInputState extends State<AppInput> {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            if (widget.dropDown) AppDropdown(),
+            if (widget.dropDown)
+              AppDropdown(
+                onSelectedCountryCode: (value) {
+                  if (widget.onSelectedCountryCode != null) {
+                    widget.onSelectedCountryCode!(value);
+                  }
+                },
+              ),
+
 
             Expanded(
               child: TextFormField(
+                maxLines:widget.maxLines ,
                 obscureText: widget.isPassword && isHidden ? true : false,
                 decoration: InputDecoration(
+
                   suffixIcon: Padding(
                     padding: const EdgeInsets.symmetric(),
                     child: widget.isPassword

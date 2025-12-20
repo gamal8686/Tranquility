@@ -27,12 +27,12 @@ class _AppFiledDrawerState extends State<AppFiledDrawer> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8),
       child: GestureDetector(
         onTap: () {},
         child: Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(8)),
+            borderRadius: BorderRadius.all(Radius.circular(8.r)),
             color: Color(0xff284243).withValues(alpha: 0.10),
           ),
           height: 40.h,
@@ -53,17 +53,17 @@ class _AppFiledDrawerState extends State<AppFiledDrawer> {
                 ),
               ),
               if (widget.isKey == true)
-              Padding(
-               padding: REdgeInsets.only(left: 6.w),
-                child: Switch(
-                  value: isOn,
-                  onChanged: (value) {
-                    setState(() {
-                      isOn = value;
-                    });
-                  },
+                Padding(
+                  padding: REdgeInsets.only(left: 6.w),
+                  child: Switch(
+                    value: isOn,
+                    onChanged: (value) {
+                      setState(() {
+                        isOn = value;
+                      });
+                    },
+                  ),
                 ),
-              ),
             ],
           ),
         ),

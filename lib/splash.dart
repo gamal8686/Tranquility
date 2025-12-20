@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'core/logic/goto.dart' show goTo;
 import 'on_boarding.dart';
 

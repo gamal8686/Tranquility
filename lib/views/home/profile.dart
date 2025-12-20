@@ -7,17 +7,22 @@ import 'package:tranquility/core/components/app_input.dart';
 
 import '../../core/components/app_drawer.dart';
 
-class EditProfilePage extends StatelessWidget {
+class EditProfilePage extends StatefulWidget {
   const EditProfilePage({super.key});
+
+  @override
+  State<EditProfilePage> createState() => _EditProfilePageState();
+}
+
+class _EditProfilePageState extends State<EditProfilePage> {
+  late String selectedCountryCode;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-drawer: AppDrawer(),
+      drawer: AppDrawer(),
 
-      appBar: AppBar(
-
-          title: Text('edit profile')),
+      appBar: AppBar(title: Text('edit profile')),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(20),
         child: Column(
@@ -49,7 +54,7 @@ drawer: AppDrawer(),
             ),
 
             SizedBox(height: 10.h),
-            AppInput(),
+            AppInput(label: 'Sara'),
             AppInput(),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -57,13 +62,26 @@ drawer: AppDrawer(),
                 Expanded(child: AppInput()),
                 SizedBox(width: 5.w),
                 Expanded(
-                  child: SizedBox(height: 50.h, child: AppDropdown()),
+                  child: SizedBox(
+                    height: 50.h,
+                    child: AppDropdown(
+                      onSelectedCountryCode: (value) {
+                        selectedCountryCode = value;
+                      },
+                    ),
+                  ),
                 ),
               ],
             ),
             SizedBox(height: 10.h),
 
-            AppButton(onPressed: () {}, text: 'Save', width: 380.w),
+            AppButton(
+              onPressed: () {
+                print(selectedCountryCode);
+              },
+              text: 'Save',
+              width: 380.w,
+            ),
             SizedBox(height: 10.h),
             Row(
               children: [

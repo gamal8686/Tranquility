@@ -4,7 +4,6 @@ import 'package:tranquility/core/components/app_image.dart';
 import 'package:tranquility/core/logic/goto.dart';
 import 'package:tranquility/views/auth/login.dart';
 
-
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({super.key});
 
@@ -25,7 +24,6 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             AppImage(
               fit: BoxFit.cover,
               path: list[counter].image,
-
               width: double.infinity,
             ),
             SizedBox(height: 25.h),
@@ -40,7 +38,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                       list[counter].text,
                       style: TextStyle(
                         fontFamily: 'Inter',
-                        fontSize: 32,
+                        fontSize: 32.sp,
                         fontWeight: FontWeight.w700,
                         color: Color(0xff000000),
                       ),
@@ -51,7 +49,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                     list[counter].desc,
                     style: TextStyle(
                       fontFamily: 'Inter',
-                      fontSize: 22,
+                      fontSize: 22.sp,
                       fontWeight: FontWeight.w400,
                       color: Color(0xff000000),
                     ),
@@ -78,7 +76,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                           });
                         },
                         child: CircleAvatar(
-                          minRadius: 30,
+                          minRadius: 30.r,
                           child: AppImage(path: 'arrow_right.svg'),
                         ),
                       ),
@@ -94,26 +92,26 @@ class _OnBoardingViewState extends State<OnBoardingView> {
   }
 }
 
-class _model {
+class _Model {
   final String image, text, desc;
 
-  _model({required this.image, required this.text, required this.desc});
+  _Model({required this.image, required this.text, required this.desc});
 }
 
 final list = [
-  _model(
+  _Model(
     image: 'on_boarding1.png',
     text: 'Feel Free',
     desc:
         "because I'm the friendly chatbot here to assist you with anything you need.",
   ),
-  _model(
+  _Model(
     image: 'on_boarding2.png',
     text: 'Ask For Anything',
     desc:
         "I'm your friendly neighborhood chatbot ready to assist you with any questions or concerns.",
   ),
-  _model(
+  _Model(
     image: 'on_boarding3.png',
     text: 'Your Secert is Save',
     desc: "Our platform prioritizes your privacy and security",

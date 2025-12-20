@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranquility/core/components/app_image.dart';
 
-import 'app_filed_drower.dart';
+import 'app_filed_drawer.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
@@ -52,11 +52,19 @@ class AppDrawer extends StatelessWidget {
             ),
           ),
           SizedBox(height: 24.h),
-          AppFiledDrawer(image: 'about_us.svg',text: 'About Us',),
-          AppFiledDrawer(image: 'rate_our_app.svg',text: 'Rate Our App',),
-          AppFiledDrawer(image: 'suggestions.svg',text: 'Suggestions',),
-          AppFiledDrawer(image: 'finger_print.svg',text: 'Enable Easy Login',isKey: true,),
-          AppFiledDrawer(image: 'logout.svg',text: 'Logout',color: Color(0xffF60000),),
+          AppFiledDrawer(image: 'about_us.svg', text: 'About Us'),
+          AppFiledDrawer(image: 'rate_our_app.svg', text: 'Rate Our App'),
+          AppFiledDrawer(image: 'suggestions.svg', text: 'Suggestions'),
+          AppFiledDrawer(
+            image: 'finger_print.svg',
+            text: 'Enable Easy Login',
+            isKey: true,
+          ),
+          AppFiledDrawer(
+            image: 'logout.svg',
+            text: 'Logout',
+            color: Color(0xffF60000),
+          ),
         ],
       ),
     );

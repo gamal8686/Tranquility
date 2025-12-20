@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -27,7 +26,7 @@ class _ChatsPageState extends State<ChatsPage> {
       appBar: AppBar(title: Text('Chats')),
       body: ListView.separated(
         itemBuilder: (context, index) => _Item(list: list[index]),
-        separatorBuilder: (context, index) => SizedBox(height: 16),
+        separatorBuilder: (context, index) => SizedBox(height: 16.h),
         itemCount:list.length,
       ),
     );
@@ -51,7 +50,7 @@ class _Item extends StatelessWidget {
               decoration: BoxDecoration(
                 border: BoxBorder.all(),
                 color: Theme.of(context).primaryColor.withValues(alpha: 0.15),
-                borderRadius: BorderRadiusGeometry.all(Radius.circular(9)),
+                borderRadius: BorderRadiusGeometry.all(Radius.circular(9.r)),
               ),
               height: 52.h,
               width: 353.w,

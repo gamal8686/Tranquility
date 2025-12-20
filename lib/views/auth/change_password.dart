@@ -6,8 +6,6 @@ import 'package:tranquility/core/components/app_image.dart';
 import '../../core/components/app_button.dart';
 import '../../core/components/app_input.dart';
 
-
-
 class ChangePasswordView extends StatelessWidget {
   const ChangePasswordView({super.key});
 
@@ -31,14 +29,14 @@ class ChangePasswordView extends StatelessWidget {
                 fontFamily: 'Inter',
               ),
             ),
-            SizedBox(height: 16.h,),
+            SizedBox(height: 16.h),
 
-            AppInput(label: 'Old Password',isPassword: true,),
+            AppInput(label: 'Old Password', isPassword: true),
 
-            AppInput(label: 'New Password',isPassword: true,),
+            AppInput(label: 'New Password', isPassword: true),
 
-            AppInput(label: 'Confirm New Password',isPassword: true,),
-            SizedBox(height: 30.h,),
+            AppInput(label: 'Confirm New Password', isPassword: true),
+            SizedBox(height: 30.h),
 
             Center(
               child: AppButton(

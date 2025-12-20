@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranquility/views/home/chats.dart';
 import 'package:tranquility/views/home/quotes.dart';
 

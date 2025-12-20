@@ -29,7 +29,7 @@ class AppMedia extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(2),
-                  child: Container(color: Colors.white, height: 51, width: 40),
+                  child: Container(color: Colors.white, height: 51.h, width: 40.w),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 8, top: 8),
@@ -37,7 +37,7 @@ class AppMedia extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(width: 8),
+            SizedBox(width: 8.w),
             Text(text),
           ],
         ),
