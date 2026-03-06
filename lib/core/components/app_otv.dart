@@ -5,13 +5,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class AppOtp extends StatelessWidget {
-  const AppOtp({super.key});
+  final TextEditingController? controller;
+  const AppOtp({super.key, this.controller});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 12.w),
       child: PinCodeTextField(
+        controller:controller ,
         useExternalAutoFillGroup: true,
         enableActiveFill: true,
         inputFormatters: [FilteringTextInputFormatter.digitsOnly],

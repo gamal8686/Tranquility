@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tranquility/views/auth/login.dart';
-import 'package:tranquility/views/auth/register.dart';
+import 'package:tranquility/views/auth/change_password/view.dart';
+import 'package:tranquility/views/auth/login/view.dart';
+import 'package:tranquility/views/auth/otp/view.dart';
+import 'package:tranquility/views/auth/register/view.dart';
 import 'package:tranquility/views/home/profile.dart';
 import 'package:tranquility/views/home/views.dart';
 import 'package:tranquility/views/start_chat.dart';
 import 'package:tranquility/views/suggestions.dart';
 import 'core/logic/goto.dart';
-import 'core/logic/show_masseg.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (_, child) {
         return MaterialApp(
-          scaffoldMessengerKey: messengerKey,
+
           navigatorKey: navKey,
           debugShowCheckedModeBanner: false,
           title: 'Tranquility',

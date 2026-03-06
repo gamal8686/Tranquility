@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranquility/core/components/app_image.dart';
 import 'package:tranquility/core/logic/goto.dart';
-import 'package:tranquility/views/auth/login.dart';
+import 'package:tranquility/views/auth/login/view.dart';
 
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({super.key});

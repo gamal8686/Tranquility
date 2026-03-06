@@ -12,6 +12,7 @@ class AppInput extends StatefulWidget {
   final String? path, label;
   final bool dropDown;
   final bool isPassword;
+  final TextEditingController? controller;
 
   const AppInput({
     super.key,
@@ -19,7 +20,7 @@ class AppInput extends StatefulWidget {
     this.dropDown = false,
     this.label,
     this.isPassword = false,
-    this.onSelectedCountryCode, this.maxLines=1,
+    this.onSelectedCountryCode, this.maxLines=1, this.controller,
   });
 
   @override
@@ -49,6 +50,7 @@ class _AppInputState extends State<AppInput> {
 
             Expanded(
               child: TextFormField(
+                controller: widget.controller,
                 maxLines:widget.maxLines ,
                 obscureText: widget.isPassword && isHidden ? true : false,
                 decoration: InputDecoration(
